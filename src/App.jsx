@@ -3,7 +3,7 @@ import './App.css'
 import Form from './Form';
 
 function App() {
-  const [attributes, setAttributes] = useState([])
+  const [attributes, setAttributes] = useState(['Strength', 'Constitution', 'Dexterity', 'Intelligence', 'Wisdom', 'Charisma']);
 
 
   // ALSO NEED STAT NUMBERS!
@@ -16,6 +16,7 @@ function App() {
   const onSpec = () => {
     console.log('Setting SPECIAL');
     setAttributes(['Strength', 'Perception', 'Endurance', 'Charisma', 'Intelligence', 'Agility', 'Luck']);
+    console.log(attributes);
   }
   return (
     <>
