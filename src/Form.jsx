@@ -1,8 +1,7 @@
-// import React from "react";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-// import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Results from "./Results";
 
 export default function Form(props) {
     const { attributes } = props; 
@@ -63,9 +62,14 @@ export default function Form(props) {
       ));
 
     return (
-        <>
-            <h1>{points}</h1>
-            <div>{attrs}</div>
+        <>  
+            <div className="formEle">
+                <h1>{points}</h1>
+                <div>{attrs}</div>
+            </div>
+            <div className="results">
+                <Results stats={stats} />
+            </div>
         </>
     );
 }

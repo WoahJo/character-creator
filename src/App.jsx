@@ -19,7 +19,7 @@ function App() {
     console.log(attributes);
   }
   return (
-    <>
+    <div className='setForm'>
       <div className='formContainer'>
         <div className="attrList">
           <input type='radio' name='attrStyle' id='dnd6' onClick={onDnd} defaultChecked/>
@@ -30,8 +30,10 @@ function App() {
           <label htmlFor='spec'>S.P.E.C.I.A.L (Fallout)</label>
         </div>
       </div>
+      <div className="formMirror">
       <Form attributes={attributes} />
-    </>
+      </div>
+    </div>
   )
 }
 
