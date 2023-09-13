@@ -9,6 +9,7 @@ function App() {
     Age: null,
     Gender: null,
     Race: null,
+    Backstory: null,
   });
   const [initPoints, setInitPoints] = useState(0);
 
@@ -73,6 +74,10 @@ function App() {
             <label htmlFor="charRace">Race</label>
             <input type='text' id="charRace" onChange={(e) => onBio(e)}/>
           </div>
+        </div>
+        <div className="story">
+          <label htmlFor='description'>Backstory</label>
+          <textarea maxLength={500} id='description' onChange={(e) => onBio(e)}/>
         </div>
       </div>
       <div className="formMirror">

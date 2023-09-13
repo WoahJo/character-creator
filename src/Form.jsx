@@ -50,6 +50,29 @@ export default function Form(props) {
         dir(attr);
     }
 
+    const onRandom = () => {
+        setPoints(initPoints)
+        let remainingPoints = initPoints;
+        
+
+        for(let i = 0; i < attributes.length; i++) {
+            let rando = Math.round(Math.random() *(remainingPoints/3 - 1)) + 1;
+            if(i === attributes.length - 1) {
+                setStats((prevStats) => ({
+                    ...prevStats, 
+                    [attributes[i]]: remainingPoints,
+                }))
+            } else {
+                setStats((prevStats) => ({
+                    ...prevStats, 
+                    [attributes[i]]: rando,
+                }))
+                remainingPoints -= rando;
+            }
+        }
+        setPoints(0);
+    }
+
     const attrs = Object.keys(stats).map((attr) => (
         <div key={uuidv4()}>
           <h1>{attr}</h1>
@@ -65,6 +88,7 @@ export default function Form(props) {
         <>  
             <div className="formEle">
                 <h2>Attributes:</h2>
+                <button onClick={onRandom}>Randomize stats!</button>
                 <h3>Points left: </h3>
                 <h1>{points}</h1>
                 <div>{attrs}</div>
