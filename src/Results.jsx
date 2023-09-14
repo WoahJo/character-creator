@@ -12,7 +12,7 @@ export default function Results(props) {
       ));
 
     return (
-        <>
+        <div className='charInfo'>
             <div key={uuidv4()} id="bioGroup">
                 <div className="bioRes">
                     <h2>Name: <span>{bio['Name']}</span></h2>
@@ -28,7 +28,7 @@ export default function Results(props) {
                 <h2> Backstory:</h2>
                 <p>{bio['Backstory']}</p>
             </div>
-        </>
+        </div>
     )
 }
 

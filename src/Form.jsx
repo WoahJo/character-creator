@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Results from "./Results";
+import Image from "./Image";
 
 export default function Form(props) {
     const { attributes, bio, initPoints } = props; 
@@ -53,7 +54,6 @@ export default function Form(props) {
     const onRandom = () => {
         setPoints(initPoints)
         let remainingPoints = initPoints;
-        
 
         for(let i = 0; i < attributes.length; i++) {
             let rando = Math.round(Math.random() *(remainingPoints/3 - 1)) + 1;
@@ -95,6 +95,7 @@ export default function Form(props) {
             </div>
             <div className="results">
                 <Results stats={stats} bio={bio} />
+                <Image />
             </div>
         </>
     );
