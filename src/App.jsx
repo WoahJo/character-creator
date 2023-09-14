@@ -42,18 +42,27 @@ function App() {
     <div className='setForm'>
       <div className='formContainer'>
         <div className="attrSelect">
-          <div className="attrList">
+          <div className="attrsPoints">
+            <label htmlFor='attrList'>Select attribute system (WIP):</label>
+            <select>
+              <option value=' '>---</option>
+              <option value='D&D 6' onClick={onDnd}>D&D 6</option>
+              <option value='SPECIAL (Fallout)' onClick={onSpec}>S.P.E.C.I.A.L</option>
+            </select>
+          </div>
+          
+          {/* <div className="attrList">
             <input type='radio' name='attrStyle' id='dnd6' onClick={onDnd} defaultChecked/>
             <label htmlFor='dnd6'>D&D 6</label>
           </div>
           <div className="attrList">
             <input type='radio' name='attrStyle' id='spec' onClick={onSpec}/>
             <label htmlFor='spec'>S.P.E.C.I.A.L (Fallout)</label>
-          </div>
+          </div>*/}
           <div className="pointSelect">
             <label htmlFor='pointSys'>Point limit</label>
             <input type='text' id='pointSys' onChange={(e) => onPoints(e)}/>
-          </div>
+          </div> 
         </div>
         <hr></hr>
         <div className="bio">

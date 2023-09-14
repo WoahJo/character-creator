@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import { v4 as uuidv4} from 'uuid';
+import './Results.css';
 
 export default function Results(props) {
     const { stats, bio } = props; 
 
     const filledAttr = Object.keys(stats).map((attr) => (
         <div key={uuidv4()} className='attrPair'>
-            <h1>{attr}</h1>
+            <h3>{attr}</h3>
             <p>{stats[attr]}</p>
         </div> 
       ));
@@ -15,10 +16,10 @@ export default function Results(props) {
         <div className='charInfo'>
             <div key={uuidv4()} id="bioGroup">
                 <div className="bioRes">
-                    <h2>Name: <span>{bio['Name']}</span></h2>
-                    <h2>Age: <span>{bio['Age']}</span></h2>
-                    <h2>Gender: <span>{bio['Gender']}</span></h2>
-                    <h2>Race: <span>{bio['Race']}</span></h2>
+                    <h3>Name: <span>{bio['Name']}</span></h3>
+                    <h3>Age: <span>{bio['Age']}</span></h3>
+                    <h3>Gender: <span>{bio['Gender']}</span></h3>
+                    <h3>Race: <span>{bio['Race']}</span></h3>
                 </div>
             </div>
             <div className="attrGroup">

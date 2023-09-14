@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import PropTypes from "prop-types";
+import './Image.css';
 
 
 export default function Image () {

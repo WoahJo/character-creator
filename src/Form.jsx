@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Results from "./Results";
 import Image from "./Image";
+import './Form.css';
 
 export default function Form(props) {
     const { attributes, bio, initPoints } = props; 
@@ -52,6 +53,10 @@ export default function Form(props) {
     }
 
     const onRandom = () => {
+        if(initPoints.isNaN || initPoints < 1) {
+            alert('Please set point limit above.');
+            return;
+        }
         setPoints(initPoints)
         let remainingPoints = initPoints;
 
@@ -75,11 +80,11 @@ export default function Form(props) {
 
     const attrs = Object.keys(stats).map((attr) => (
         <div key={uuidv4()}>
-          <h1>{attr}</h1>
+          <h3>{attr}</h3>
           <div>
-            <span onClick={() => changeStat(attr, less)}> &lt; </span>
+            <span onClick={() => changeStat(attr, less)} className="arrow"> &lt; </span>
             {stats[attr]}
-            <span onClick={() => changeStat(attr, add)}> &gt; </span>
+            <span onClick={() => changeStat(attr, add)} className="arrow"> &gt; </span>
           </div>
         </div>
       ));
@@ -90,7 +95,7 @@ export default function Form(props) {
                 <h2>Attributes:</h2>
                 <button onClick={onRandom}>Randomize stats!</button>
                 <h3>Points left: </h3>
-                <h1>{points}</h1>
+                <h3>{points}</h3>
                 <div>{attrs}</div>
             </div>
             <div className="results">
