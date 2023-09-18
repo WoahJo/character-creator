@@ -1,0 +1,19 @@
+.charImage {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+}
+
+.imgContainer {
+    object-fit: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.imgContainer > img{
+    width: inherit;
+}

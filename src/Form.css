@@ -1,0 +1,6 @@
+.results {
+    display: flex;
+    justify-content: space-between;
+    width: 31%;
+    padding: 20px;
+  }

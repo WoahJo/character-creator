@@ -65,28 +65,30 @@ function App() {
           </div> 
         </div>
         <hr></hr>
-        <div className="bio">
+        <div className="attrContainer">
           <p>Bio:</p>
-          <div className="bioItem">
-            <label htmlFor="charName">Name</label>
-            <input type='text' id="charName" onChange={(e) => onBio(e)}/>
+          <div className="bio">
+            <div className="bioItem">
+              <label htmlFor="charName">Name</label>
+              <input type='text' id="charName" onChange={(e) => onBio(e)}/>
+            </div>
+            <div className="bioItem">
+              <label htmlFor="charAge">Age</label>
+              <input type='text' id="charAge" onChange={(e) => onBio(e)}/>
+            </div>
+            <div className="bioItem">
+              <label htmlFor="charGender">Gender</label>
+              <input type='text' id="charGender" onChange={(e) => onBio(e)}/>
+            </div>
+            <div className="bioItem">
+              <label htmlFor="charRace">Race</label>
+              <input type='text' id="charRace" onChange={(e) => onBio(e)}/>
+            </div>
           </div>
-          <div className="bioItem">
-            <label htmlFor="charAge">Age</label>
-            <input type='text' id="charAge" onChange={(e) => onBio(e)}/>
+          <div className="story">
+            <label htmlFor='description'>Backstory</label>
+            <textarea maxLength={500} id='description' onChange={(e) => onBio(e)}/>
           </div>
-          <div className="bioItem">
-            <label htmlFor="charGender">Gender</label>
-            <input type='text' id="charGender" onChange={(e) => onBio(e)}/>
-          </div>
-          <div className="bioItem">
-            <label htmlFor="charRace">Race</label>
-            <input type='text' id="charRace" onChange={(e) => onBio(e)}/>
-          </div>
-        </div>
-        <div className="story">
-          <label htmlFor='description'>Backstory</label>
-          <textarea maxLength={500} id='description' onChange={(e) => onBio(e)}/>
         </div>
       </div>
       <div className="formMirror">
