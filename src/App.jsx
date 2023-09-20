@@ -77,7 +77,6 @@ function App() {
             <p>[Click this window to close]</p>
           </div>
         </div>
-        <hr></hr>
         <div className="attrContainer">
           <p>Bio:</p>
           <div className="bio">
