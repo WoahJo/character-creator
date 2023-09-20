@@ -25,10 +25,10 @@ export default function Results(props) {
             <div className="attrGroup">
                 {filledAttr}
             </div>
-            <div className='backstory'>
+            {/* <div className='backstory'>
                 <h2> Backstory:</h2>
                 <p>{bio['Backstory']}</p>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -99,8 +99,14 @@ export default function Form(props) {
                 <div>{attrs}</div>
             </div>
             <div className="results">
-                <Results stats={stats} bio={bio} />
-                <Image />
+                <div className="charBioImg">
+                    <Results stats={stats} bio={bio} />
+                    <Image />
+                </div>
+                <div className='backstory'>
+                    <h2> Backstory:</h2>
+                    <p>{bio['Backstory']}</p>
+                </div>
             </div>
         </>
     );

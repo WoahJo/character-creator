@@ -1,6 +1,26 @@
 .results {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    width: 31%;
+    width: 40%;
     padding: 20px;
+    gap: 10px;
   }
+
+  .formEle {
+    padding: 20px;
+}
+
+.arrow {
+    cursor: pointer;
+    user-select: none;
+}
+
+.charBioImg {
+    display: flex;
+    justify-content: space-between;
+}
+
+.backstory {
+    max-width: 100%;
+}

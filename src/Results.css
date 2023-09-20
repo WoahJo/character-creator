@@ -17,3 +17,11 @@
 .imgContainer > img{
     width: inherit;
 }
+
+.charInfo {
+    max-width: 50%;
+}
+
+.backstory {
+    max-width: 80%;
+}

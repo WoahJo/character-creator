@@ -25,7 +25,7 @@ export default function Image () {
                 style={{display: 'none'}}
                 onChange={handleImg}
                 ref={imgRef}/>
-                <label>Click to add/edit an image</label>
+                <label>Click to add/edit an image (.png, .jpg)</label>
                 <img alt="" src={image} />
             </div>
         </div>

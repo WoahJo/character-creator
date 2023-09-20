@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import Form from './Form';
 
@@ -12,6 +12,7 @@ function App() {
     Backstory: null,
   });
   const [initPoints, setInitPoints] = useState(0);
+  const helpRef = useRef();
 
 
   // ALSO NEED STAT NUMBERS!
@@ -37,7 +38,16 @@ function App() {
   const onPoints = (e) => {
     const pointsNum = parseInt(e.target.value); 
     !pointsNum.isNaN && setInitPoints(pointsNum);
- }
+  }
+
+  const showHelp = () => {
+    helpRef.current.style.display = 'block';
+  }
+
+  const close = () => {
+    helpRef.current.style.display = 'none';
+  }
+
   return (
     <div className='setForm'>
       <div className='formContainer'>
@@ -46,23 +56,26 @@ function App() {
             <label htmlFor='attrList'>Select attribute system (WIP):</label>
             <select>
               <option value=' '>---</option>
-              <option value='D&D 6' onClick={onDnd}>D&D 6</option>
+              <option value='D&D 6' onClick={onDnd}>D&D 6 (default)</option>
               <option value='SPECIAL (Fallout)' onClick={onSpec}>S.P.E.C.I.A.L</option>
             </select>
           </div>
-          
-          {/* <div className="attrList">
-            <input type='radio' name='attrStyle' id='dnd6' onClick={onDnd} defaultChecked/>
-            <label htmlFor='dnd6'>D&D 6</label>
-          </div>
-          <div className="attrList">
-            <input type='radio' name='attrStyle' id='spec' onClick={onSpec}/>
-            <label htmlFor='spec'>S.P.E.C.I.A.L (Fallout)</label>
-          </div>*/}
           <div className="pointSelect">
             <label htmlFor='pointSys'>Point limit</label>
             <input type='text' id='pointSys' onChange={(e) => onPoints(e)}/>
           </div> 
+          <button onClick={showHelp}>Help</button>
+          <div className="helpBox" ref={helpRef} onClick={close}>
+            <p>Thanks for using [name]! Here are some quick tips to get you started: </p>
+            <ul>
+              <li>Choose an attribute system from the drop-down menu. More to come soon!</li>
+              <li>A point limit must be set before attempting to distribute attribute points.</li>
+              <li>By pressing &quot;Randomize stats!&quot;, points are assigned randomly to the available attributes based on the given point limit.</li>
+              <li>Use the arrows located at each side of a stat&apos;s number to change its value.</li>
+              <li>It is best to use portrait-oriented images (height greater than width) to avoid resizing that results in an unreadable image.</li>
+            </ul>
+            <p>[Click this window to close]</p>
+          </div>
         </div>
         <hr></hr>
         <div className="attrContainer">
@@ -92,7 +105,7 @@ function App() {
         </div>
       </div>
       <div className="formMirror">
-      <Form attributes={attributes} bio={bio} initPoints={initPoints} />
+        <Form attributes={attributes} bio={bio} initPoints={initPoints} />
       </div>
     </div>
   )
