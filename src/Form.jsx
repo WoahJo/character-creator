@@ -8,14 +8,6 @@ import './Form.css';
 export default function Form(props) {
     const { attributes, bio, initPoints } = props; 
     const [points, setPoints] = useState(initPoints);
-    // takes attributes and adds them to an object as keys and sets each value to 0, the object is then used as the state
-    // const [stats, setStats] = useState(
-    //     attributes.reduce((acc, attribute) => {
-    //       acc[attribute] = 0;
-    //       return acc;
-    //     }, {})
-    //   );
-
     const [stats, setStats] = useState({});
 
     useEffect(() => {
@@ -49,12 +41,16 @@ export default function Form(props) {
     }
 
     const changeStat = (attr, dir) => {
+        if(initPoints.isNaN || initPoints <= attributes.length) {
+            alert('Point limit must be greater than ' + attributes.length + '.');
+            return;
+        }
         dir(attr);
     }
 
     const onRandom = () => {
-        if(initPoints.isNaN || initPoints < 1) {
-            alert('Please set point limit above.');
+        if(initPoints.isNaN || initPoints <= attributes.length) {
+            alert('Point limit must be greater than ' + attributes.length + '.');
             return;
         }
         setPoints(initPoints)
@@ -99,13 +95,14 @@ export default function Form(props) {
                 <div>{attrs}</div>
             </div>
             <div className="results">
+                <button onClick={window.print}>Print/save</button>
                 <div className="charBioImg">
                     <Results stats={stats} bio={bio} />
                     <Image />
                 </div>
                 <div className='backstory'>
-                    <h2> Backstory:</h2>
-                    <p>{bio['Backstory']}</p>
+                    <h3> Backstory:</h3>
+                    <div>{bio['Backstory']}</div>
                 </div>
             </div>
         </>

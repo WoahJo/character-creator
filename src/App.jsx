@@ -14,9 +14,6 @@ function App() {
   const [initPoints, setInitPoints] = useState(0);
   const helpRef = useRef();
 
-
-  // ALSO NEED STAT NUMBERS!
-
   const onDnd = () => {
     console.log('Setting Dnd 6');
     setAttributes(['Strength', 'Constitution', 'Dexterity', 'Intelligence', 'Wisdom', 'Charisma']);
@@ -55,9 +52,8 @@ function App() {
           <div className="attrsPoints">
             <label htmlFor='attrList'>Select attribute system (WIP):</label>
             <select>
-              <option value=' '>---</option>
               <option value='D&D 6' onClick={onDnd}>D&D 6 (default)</option>
-              <option value='SPECIAL (Fallout)' onClick={onSpec}>S.P.E.C.I.A.L</option>
+              <option value='SPECIAL (Fallout)' onClick={onSpec}>S.P.E.C.I.A.L [Fallout]</option>
             </select>
           </div>
           <div className="pointSelect">
@@ -70,6 +66,7 @@ function App() {
             <ul>
               <li>Choose an attribute system from the drop-down menu. More to come soon!</li>
               <li>A point limit must be set before attempting to distribute attribute points.</li>
+              <li>The point limit must be greater than the number of attributes.</li>
               <li>By pressing &quot;Randomize stats!&quot;, points are assigned randomly to the available attributes based on the given point limit.</li>
               <li>Use the arrows located at each side of a stat&apos;s number to change its value.</li>
               <li>It is best to use portrait-oriented images (height greater than width) to avoid resizing that results in an unreadable image.</li>
@@ -99,7 +96,7 @@ function App() {
           </div>
           <div className="story">
             <label htmlFor='description'>Backstory</label>
-            <textarea maxLength={500} id='description' onChange={(e) => onBio(e)}/>
+            <textarea maxLength={1000} id='description' onChange={(e) => onBio(e)} placeholder='Limit 1000 characters...'/>
           </div>
         </div>
       </div>

@@ -7,8 +7,7 @@ export default function Results(props) {
 
     const filledAttr = Object.keys(stats).map((attr) => (
         <div key={uuidv4()} className='attrPair'>
-            <h3>{attr}</h3>
-            <p>{stats[attr]}</p>
+            <h3>{attr}: <span>{stats[attr]}</span></h3>
         </div> 
       ));
 
@@ -25,10 +24,6 @@ export default function Results(props) {
             <div className="attrGroup">
                 {filledAttr}
             </div>
-            {/* <div className='backstory'>
-                <h2> Backstory:</h2>
-                <p>{bio['Backstory']}</p>
-            </div> */}
         </div>
     )
 }

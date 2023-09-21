@@ -19,9 +19,20 @@
 }
 
 .charInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     max-width: 50%;
 }
 
 .backstory {
     max-width: 80%;
+}
+
+.bioRes > h3 > span {
+    font-weight: 400;
+}
+
+.attrPair > h3 > span {
+    font-weight: 400;
 }

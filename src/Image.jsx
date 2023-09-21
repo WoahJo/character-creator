@@ -6,6 +6,7 @@ import './Image.css';
 export default function Image () {
     const [image, setImage] = useState('');
     const imgRef = useRef();
+    const imgContRef = useRef();
 
     const handleClick = () => {
         imgRef.current.click();
@@ -14,18 +15,20 @@ export default function Image () {
     const handleImg = () => {
         const file = imgRef.current.files[0];
 
-        if(file) setImage(URL.createObjectURL(file));
+        if(file) {
+            imgContRef.current.style.border = 'none';
+            setImage(URL.createObjectURL(file));}
     }
     
     return (
         <div className="charImage">
-            <div className="imgContainer" onClick={handleClick}>
+            <div className="imgContainer" ref={imgContRef} onClick={handleClick}>
+            <label>Click to add/edit an image (.png, .jpg)</label>
                 <input type="file" 
                 accept='.jpg, .jpeg, .png'
                 style={{display: 'none'}}
                 onChange={handleImg}
                 ref={imgRef}/>
-                <label>Click to add/edit an image (.png, .jpg)</label>
                 <img alt="" src={image} />
             </div>
         </div>

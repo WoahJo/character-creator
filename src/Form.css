@@ -1,7 +1,7 @@
 .results {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 40%;
     padding: 20px;
     gap: 10px;
@@ -23,4 +23,5 @@
 
 .backstory {
     max-width: 100%;
+    word-wrap: break-word;
 }
