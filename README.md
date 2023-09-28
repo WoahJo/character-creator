@@ -20,5 +20,5 @@ Throughout this project, my primary goal was to familiarize myself with React by
   
 This character creator is functional as it is, but there are some features and improvements I would like to implement over time: 
 - create custom attributes 
-- store created characters in a library for future use 
+- store created characters in a library for future use and easy updating
 - more preset options based on other popular roleplaying games 
