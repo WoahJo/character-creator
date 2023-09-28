@@ -2,7 +2,7 @@
   
 Create a custom character for roleplaying games and other purposes!
   
-This project was created with HTML, CSS, Javascript and React. Check it out [here](https://not-yet)!
+This project was created with HTML, CSS, Javascript and React. Check it out [here](https://wj-character-creator.netlify.app/)!
 
 ## What's the point?  
   
