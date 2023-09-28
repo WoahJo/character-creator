@@ -95,7 +95,7 @@ export default function Form(props) {
                 <div>{attrs}</div>
             </div>
             <div className="results">
-                <button onClick={window.print}>Print/save</button>
+                <button onClick={window.print}>Print/Save</button>
                 <div className="charBioImg">
                     <Results stats={stats} bio={bio} />
                     <Image />
