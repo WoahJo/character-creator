@@ -1,5 +1,5 @@
 @media print {
-    .formContainer, .formMirror > .formEle, .formMirror > button, .results > button {
+    .formContainer, .formMirror > .formEle, .formMirror > button, .results > button, .imgContainer > label, footer {
         display: none;
     }
 
@@ -11,8 +11,15 @@
     .imgContainer {
         border: none;
     }
+}
 
-    .imgContainer > label {
-        display: none;
-    }
+footer {
+    background: #3A6351;
+    color: beige;
+    text-align: center;
+    padding: 10px;
+}
+
+footer > a {
+    color: #E48257;
 }
