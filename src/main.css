@@ -8,6 +8,10 @@
         height: 100%;
     }
 
+    h2, h3 {
+        color: black;
+    }
+
     .imgContainer {
         border: none;
     }
